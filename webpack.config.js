@@ -41,8 +41,8 @@ module.exports = {
     'app': resolve( 'src/index.js' ),
     // 'packageA/pages/a/index': path.resolve( __dirname, 'src/index.js' ),
     // 'pages/index/index': resolve( 'src/pages/index/index.js' ),
-    'pages/counter/index': resolve( 'src/pages/counter/index.js' ),
-    // 'pages/todomvc/index': resolve( 'src/pages/todomvc/index.js' ),
+    // 'pages/counter/index': resolve( 'src/pages/counter/index.js' ),
+    'pages/todomvc/index': resolve( 'src/pages/todomvc/index.js' ),
   },
 
   output: {
@@ -72,7 +72,8 @@ module.exports = {
   resolve: {
     extensions: ['.vue', '.js', '.json'],
     alias: {
-      'vue': path.resolve('../megalo/dist/vue.mp.esm'),
+      // 'vue': path.resolve('../megalo/dist/vue.mp.esm'),
+      'vue': 'megalo',
       '@': path.resolve('src')
     },
   },
