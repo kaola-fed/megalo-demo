@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@megalo/target": "*",
+    "@megalo/target": "0.0.2",
     "@megalo/template-compiler": "*",
     "babel-core": "6",
     "babel-loader": "^7.1.5",
@@ -24,7 +24,7 @@
     "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.4.1",
     "vue": "^2.5.17",
-    "vue-loader": "^15.2.7",
+    "vue-loader": "15.4.0",
     "vue-style-loader": "^4.1.1",
     "vue-template-compiler": "^2.5.17",
     "webpack": "^4.16.5",
