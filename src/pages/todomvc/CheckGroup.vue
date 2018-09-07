@@ -3,7 +3,7 @@
     <div v-for="(item, index) in source"
       :class="{ 'm-checkgroup__item': true, 'z-checked': item.checked }"
       @click="onCheck(item, index)"
-    >{{ item.label }}</div>
+    ><slot :item="item"></slot></div>
   </div>
 </template>
 

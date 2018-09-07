@@ -19,7 +19,7 @@
 
       <section class="todo-list" v-show="dropdown">
         <ul>
-            <li v-for="item in showList" :key="item.id" :class="{ todo: true, 'z-compeleted': item.status === COMPELETED }">
+            <li v-for="item in showList" :key="item.id" class="todo" :class="{ 'z-compeleted': item.status === COMPELETED }">
               <div class="todo__checkbox"
                 @click="onStatusUpdate( item )"
               ></div>
@@ -30,8 +30,10 @@
       </section>
 
       <section class="toolbar">
-        <CheckGroup :source="statusGroup" @checked="onFilterList($event)"></CheckGroup>
-        <div class="toolbar__label">{{ showList.length || 0 }} items left</div>
+        <CheckGroup :source="statusGroup" @checked="onFilterList($event)">
+          <span slot-scope="scopeProps">{{scopeProps.item.label}}</span>
+        </CheckGroup>
+        <div class="toolbar__label">{{ showList | len }} items left</div>
         <div class="toolbar__label toolbar__clear" @click="onClear(COMPELETED)">Clear compeleted</div>
       </section>
     </div>
@@ -63,6 +65,12 @@ export default {
         }
       });
       return newList
+    }
+  },
+
+  filters: {
+    len(val) {
+      return val.length
     }
   },
 
