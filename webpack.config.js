@@ -4,7 +4,6 @@ const webpack = require( 'webpack' )
 const createMegaloTarget = require( '@megalo/target' )
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' )
-// const compiler = require( 'vue-template-compiler' )
 const compiler = require( '@megalo/template-compiler' )
 
 function resolve (...args) {
@@ -16,24 +15,7 @@ module.exports = {
   mode: 'development',
 
   target: createMegaloTarget( {
-    compiler: Object.assign( compiler, {
-      // compileToTemplate( content, { target, name, moduleId, components = [] } = {} ) {
-      //   return {
-      //     body: 'main',
-      //     slots: [
-      //       {
-      //         dependencies: [ 'dep1', 'dep2' ],
-      //         body: '<template name="slot1"><template is="dep1" /></tempalte>',
-      //       },
-
-      //       {
-      //         dependencies: [ 'dep8', 'dep9' ],
-      //         body: '<template name="slot2"><template is="dep8" /></tempalte>',
-      //       }
-      //     ],
-      //   }
-      // }
-    } ),
+    compiler: Object.assign( compiler, { } ),
     platform: 'wechat',
   } ),
 
@@ -121,7 +103,6 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin(),
-    // new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin( {
       filename: 'static/css/[name].wxss',
     } ),
