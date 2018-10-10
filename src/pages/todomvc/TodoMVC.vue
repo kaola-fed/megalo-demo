@@ -30,9 +30,9 @@
       </section>
 
       <section class="toolbar">
-        <CheckGroup :source="statusGroup" @checked="onFilterList($event)">
+        <check-group :source="statusGroup" @checked="onFilterList($event)">
           <span slot-scope="scopeProps">{{scopeProps.item.label}}</span>
-        </CheckGroup>
+        </check-group>
         <div class="toolbar__label">{{ showList | len }} items left</div>
         <div class="toolbar__label toolbar__clear" @click="onClear(COMPELETED)">Clear compeleted</div>
       </section>
@@ -46,6 +46,7 @@ import CheckGroup from './CheckGroup.vue'
 const COMPELETED = 1;
 const ACTIVE = 0;
 const ALL = -1;
+let uid = 0;
 
 export default {
   mpType: 'page',
@@ -74,6 +75,14 @@ export default {
     }
   },
 
+  onLoad() {
+    console.log('onLoad')
+  },
+
+  onShow() {
+    console.log('onShow')
+  },
+
   data() {
     return {
       COMPELETED,
@@ -90,7 +99,8 @@ export default {
       list: [
         {
           label: 'develop mpregular',
-          status: ACTIVE
+          status: ACTIVE,
+          id: uid++
         }
       ]
     }
@@ -99,7 +109,6 @@ export default {
   methods: {
     onDropdown() {
       this.dropdown = !this.dropdown;
-      console.log(this.dropdown)
     },
 
     onEnter(e) {
@@ -109,7 +118,8 @@ export default {
       }
       this.input = '';
       this.addTodo({
-        label: value
+        label: value,
+        id: uid++
       });
     },
 
@@ -136,7 +146,8 @@ export default {
     addTodo(todo) {
       this.list.push({
         label: todo.label,
-        status: todo.status || ACTIVE
+        status: todo.status || ACTIVE,
+        id: uid++
       });
     }
   }
