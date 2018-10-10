@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -w",
-    "dev:loader": "node --inspect-brk ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js",
+    "dev": "webpack --config ./build/webpack.config.base.js -w",
+    "dev:wechat": "webpack --config ./build/webpack.config.wechat.js -w",
+    "dev:alipay": "webpack --config ./build/webpack.config.alipay.js -w",
+    "brk:wechat": "node --inspect-brk ./node_modules/webpack/bin/webpack.js --config ./build/webpack.config.wechat.js",
+    "brk:alipay": "node --inspect-brk ./node_modules/webpack/bin/webpack.js --config ./build/webpack.config.alipay.js",
     "demo:dev-server": "webpack-dev-server",
     "link": "npm link @megalo/template-compiler && npm link @megalo/target"
   },
@@ -18,6 +21,7 @@
     "babel-core": "6",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
+    "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.8.1",

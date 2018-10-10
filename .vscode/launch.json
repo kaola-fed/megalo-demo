@@ -7,11 +7,22 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "loader",
+      "name": "brk:alipay",
       "runtimeExecutable": "npm",
       "runtimeArgs": [
         "run-script",
-        "dev:loader"
+        "brk:alipay"
+      ],
+      "port": 9229
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "brk:wechat",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run-script",
+        "brk:wechat"
       ],
       "port": 9229
     },
