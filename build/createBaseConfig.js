@@ -14,7 +14,7 @@ function createBaseConfig( platform = 'wechat' ) {
       platform,
       htmlParse: {
         templateName: 'octoParse',
-        src: _.resolve('./node_modules/octoparse/lib/platform/wechat')
+        src: _.resolve(`./node_modules/octoparse/lib/platform/${platform}`)
       }
     } ),
 
