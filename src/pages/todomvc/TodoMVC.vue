@@ -98,7 +98,7 @@ export default {
       ],
       list: [
         {
-          label: 'develop mpregular',
+          label: 'develop megalo',
           status: ACTIVE,
           id: uid++
         }
