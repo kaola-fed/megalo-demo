@@ -36,7 +36,8 @@
     "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {
+    "@megalo/vhtml-plugin": "^0.1.0",
     "megalo": "*",
-    "octoparse": "^0.1.9"
+    "octoparse": "^0.1.11"
   }
 }
