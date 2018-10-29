@@ -22,7 +22,6 @@ function createBaseConfig( platform = 'wechat' ) {
       'app': _.resolve( 'src/index.js' ),
       // 'packageA/pages/a/index': _.resolve( __dirname, 'src/index.js' ),
       'pages/index/index': _.resolve( 'src/pages/index/index.js' ),
-      'pages/counter/index': _.resolve( 'src/pages/counter/index.js' ),
       'pages/todomvc/index': _.resolve( 'src/pages/todomvc/index.js' ),
       'pages/v-model/index': _.resolve( 'src/pages/v-model/index.js' ),
       'pages/v-html/index': _.resolve( 'src/pages/v-html/index.js' ),
