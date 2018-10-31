@@ -25,6 +25,10 @@ export default {
         {
           link: '/pages/v-model/index',
           text: 'v-model',
+        },
+        {
+          link: '/pages/vuex/index',
+          text: 'vuex',
         }
       ]
     }

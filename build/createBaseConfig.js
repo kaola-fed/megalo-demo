@@ -25,6 +25,7 @@ function createBaseConfig( platform = 'wechat' ) {
       'pages/todomvc/index': _.resolve( 'src/pages/todomvc/index.js' ),
       'pages/v-model/index': _.resolve( 'src/pages/v-model/index.js' ),
       'pages/v-html/index': _.resolve( 'src/pages/v-html/index.js' ),
+      'pages/vuex/index': _.resolve( 'src/pages/vuex/index.js' ),
     },
 
     output: {

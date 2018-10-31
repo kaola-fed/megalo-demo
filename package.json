@@ -31,13 +31,14 @@
     "vue-loader": "15.4.0",
     "vue-style-loader": "^4.1.1",
     "vue-template-compiler": "^2.5.17",
+    "vuex": "^3.0.1",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {
     "@megalo/vhtml-plugin": "^0.1.0",
-    "megalo": "*",
+    "megalo": "^0.1.3-1",
     "octoparse": "^0.1.11"
   }
 }

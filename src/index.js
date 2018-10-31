@@ -15,6 +15,7 @@ export default {
       'pages/todomvc/index',
       'pages/v-model/index',
       'pages/v-html/index',
+      'pages/vuex/index',
     ],
     window: {
       backgroundTextStyle: 'light',
