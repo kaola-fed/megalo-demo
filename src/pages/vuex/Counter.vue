@@ -14,13 +14,21 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   mpType: 'page',
   computed: mapGetters([
-    'evenOrOdd'
+      'evenOrOdd'
   ]),
-  methods: mapActions([
-    'increment',
-    'decrement',
-    'incrementIfOdd',
-    'incrementAsync'
-  ])
+  methods: {
+    ...mapActions([
+      'increment',
+      'decrement',
+      'incrementIfOdd',
+      'incrementAsync'
+    ]),
+    tset: ()=>{
+      console.log('test')
+    }
+  },
+  created(){
+    this.tset();
+  }
 }
 </script>
