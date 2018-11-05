@@ -1,6 +1,6 @@
 <template>
   <div class="m-checkgroup">
-    <div v-for="(item, index) in source"
+    <div v-for="(item, index) in source" :key="index"
       :class="{ 'm-checkgroup__item': true, 'z-checked': item.checked }"
       @click="onCheck(item, index)"
     ><slot :item="item"></slot></div>

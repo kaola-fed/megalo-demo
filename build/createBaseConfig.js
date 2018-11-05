@@ -56,7 +56,7 @@ function createBaseConfig( platform = 'wechat' ) {
     resolve: {
       extensions: ['.vue', '.js', '.json'],
       alias: {
-        // 'vue': _.resolve('../megalo/dist/megalo.mp.esm'),
+        // 'vue': _.resolve('../../megalo-workspace/megalo/dist/megalo.mp.esm'),
         'vue': 'megalo',
         '@': _.resolve('src')
       },

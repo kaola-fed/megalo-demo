@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     Clicked: {{ $store.state.count }} times, count is {{ evenOrOdd }}.
-    <button @click="increment">+</button>
+    <button @click="increment()|test()">+</button>
     <button @click="decrement">-</button>
     <button @click="incrementIfOdd">Increment if odd</button>
     <button @click="incrementAsync">Increment async</button>
+    globalData:{{globalData}}
   </div>
 </template>
 
@@ -16,6 +17,11 @@ export default {
   computed: mapGetters([
       'evenOrOdd'
   ]),
+  data(){
+    return {
+      globalData:{}
+    }
+  },
   methods: {
     ...mapActions([
       'increment',
@@ -23,12 +29,13 @@ export default {
       'incrementIfOdd',
       'incrementAsync'
     ]),
-    tset: ()=>{
-      console.log('test')
+    test: function() {
+      this.globalData['a']++
     }
   },
   created(){
-    this.tset();
+    var appInstance = getApp()
+    this.globalData = appInstance.globalData;
   }
 }
 </script>

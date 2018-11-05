@@ -1,10 +1,11 @@
 <template>
   <div class="app">
     <ul class="list">
-      <li class="list__item" v-for="item in list">
+      <li class="list__item" v-for="(item, index) in list" :key="index">
         <a :url="item.link">{{ item.text }}</a>
       </li>
     </ul>
+    globalData:{{globalData}}
   </div>
 </template>
 
@@ -13,6 +14,7 @@ export default {
   mpType: 'page',
   data() {
     return {
+      globalData:{},
       list: [
         {
           link: '/pages/todomvc/index',
@@ -32,6 +34,10 @@ export default {
         }
       ]
     }
+  },
+  created() {
+    var appInstance = getApp()
+    this.globalData = appInstance.globalData;
   }
 }
 </script>
