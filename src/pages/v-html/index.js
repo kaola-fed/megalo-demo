@@ -9,7 +9,9 @@ const app = new Vue( VHtml )
 app.$mount()
 
 export default {
-  usingComponents: {
+  config: {
+    usingComponents: {
 
+    }
   }
 }

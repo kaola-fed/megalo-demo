@@ -6,7 +6,9 @@ const app = new Vue( Model )
 app.$mount()
 
 export default {
-  usingComponents: {
+  config: {
+    usingComponents: {
 
+    }
   }
 }
