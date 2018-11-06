@@ -15,3 +15,9 @@ npm run dev:wechat
 ```bash
 npm run dev:alipay
 ```
+
+百度智能小程序版本：
+
+```bash
+npm run dev:swan
+```
