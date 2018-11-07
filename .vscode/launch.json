@@ -26,5 +26,16 @@
       ],
       "port": 9229
     },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "brk:swan",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run-script",
+        "brk:swan"
+      ],
+      "port": 9229
+    },
   ]
 }

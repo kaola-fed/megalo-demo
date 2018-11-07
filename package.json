@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --config ./build/webpack.config.base.js -w",
+    "build:wechat": "webpack --config ./build/webpack.config.wechat.js",
+    "build:alipay": "webpack --config ./build/webpack.config.alipay.js",
+    "build:swan": "webpack --config ./build/webpack.config.swan.js",
     "dev:wechat": "webpack --config ./build/webpack.config.wechat.js -w",
     "dev:alipay": "webpack --config ./build/webpack.config.alipay.js -w",
     "dev:swan": "webpack --config ./build/webpack.config.swan.js -w",
