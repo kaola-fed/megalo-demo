@@ -1,7 +1,6 @@
-import Page from './Page'
+import App from './index'
 import Vue from 'vue'
 
-new Vue( {
-  el: '#app',
-  render: h => h( Page )
-} )
+const app = new Vue( App )
+
+app.$mount()

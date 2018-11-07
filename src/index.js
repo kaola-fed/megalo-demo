@@ -10,7 +10,12 @@ app.$mount()
 
 export default {
   config: {
-    // 页面前带有 ^ 符号的，会被编译成首页，其他页面可以选填，我们会自动把 webpack entry 里面的入口页面加进去
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black'
+    },
     pages: [
       'pages/index/index',
       'pages/todomvc/index',
@@ -18,11 +23,11 @@ export default {
       'pages/v-html/index',
       'pages/vuex/index',
     ],
-    window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
-    }
+    subPackages: [
+      {
+          root: 'packageA',
+          pages: ['pages/a/index']
+      }
+    ],
   }
 }
