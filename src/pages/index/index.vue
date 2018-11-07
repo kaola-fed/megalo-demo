@@ -5,6 +5,7 @@
         <a :url="item.link">{{ item.text }}</a>
       </li>
     </ul>
+
     globalData:{{globalData}}
   </div>
 </template>
@@ -31,6 +32,10 @@ export default {
         {
           link: '/pages/vuex/index',
           text: 'vuex',
+        },
+        {
+          link: '../../packageA/pages/a/index',
+          text: 'packageA-a',
         }
       ]
     }
@@ -38,6 +43,11 @@ export default {
   created() {
     var appInstance = getApp()
     this.globalData = appInstance.globalData;
+  },
+  methods: {
+    onTouchStart(e) {
+      console.log(e)
+    }
   }
 }
 </script>

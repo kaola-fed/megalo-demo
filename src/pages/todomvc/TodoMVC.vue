@@ -75,8 +75,21 @@ export default {
     }
   },
 
+  created() {
+    console.log('created')
+    console.log(this)
+  },
+
   onLoad() {
     console.log('onLoad')
+  },
+
+  mounted() {
+    console.log('mounted')
+  },
+
+  onReady() {
+    console.log('onReady')
   },
 
   onShow() {
