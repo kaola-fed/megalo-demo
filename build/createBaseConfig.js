@@ -57,6 +57,9 @@ function createBaseConfig( platform = 'wechat' ) {
             chunks: 'all'
           }
         }
+      },
+      runtimeChunk: {
+        name: 'runtime'
       }
     },
 
