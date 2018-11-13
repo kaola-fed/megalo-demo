@@ -2,6 +2,7 @@ const createMegaloTarget = require( '@megalo/target' )
 const compiler = require( '@megalo/template-compiler' )
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' )
 const VueLoaderPlugin = require( 'vue-loader/lib/plugin' )
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const _ = require( './util' );
 
 const CSS_EXT = {
@@ -33,6 +34,8 @@ function createBaseConfig( platform = 'wechat' ) {
       'pages/v-model/index': _.resolve( 'src/pages/v-model/index.js' ),
       'pages/v-html/index': _.resolve( 'src/pages/v-html/index.js' ),
       'pages/vuex/index': _.resolve( 'src/pages/vuex/index.js' ),
+      'pages/webview/index': _.resolve( 'src/pages/webview/index.js' ),
+      'pages/native/index': _.resolve( 'src/pages/native/index.js' ),
     },
 
     output: {
@@ -114,6 +117,11 @@ function createBaseConfig( platform = 'wechat' ) {
       new MiniCssExtractPlugin( {
         filename: `./static/css/[name].${cssExt}`,
       } ),
+      new CopyWebpackPlugin( [ {
+        context: `src/native/${platform}/`,
+        from: `**/*`,
+        to: _.resolve( `dist-${platform}/native` )
+      } ], {} )
     ]
   }
 }

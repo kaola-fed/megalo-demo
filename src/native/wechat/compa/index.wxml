@@ -1,0 +1,20 @@
+<view class="wrapper">
+  <view>compA</view>
+  <view>
+    head {
+      <slot name="head"></slot>
+    }
+  </view>
+
+  <view>
+    default {
+      <slot></slot>
+    }
+  </view>
+
+  <view>
+    foot {
+      <slot name="foot"></slot>
+    }
+  </view>
+</view>

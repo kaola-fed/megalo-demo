@@ -1,0 +1,8 @@
+Component({
+  props: {
+
+  },
+  methods: {
+
+  }
+})

@@ -22,6 +22,8 @@ export default {
       'pages/v-model/index',
       'pages/v-html/index',
       'pages/vuex/index',
+      'pages/native/index',
+      'pages/webview/index',
     ],
     subPackages: [
       {

@@ -34,6 +34,14 @@ export default {
           text: 'vuex',
         },
         {
+          link: '/pages/webview/index',
+          text: 'web-view',
+        },
+        {
+          link: '/pages/native/index',
+          text: '原生自定义组件',
+        },
+        {
           link: '../../packageA/pages/a/index',
           text: 'packageA-a',
         }
