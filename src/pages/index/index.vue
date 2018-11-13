@@ -6,7 +6,13 @@
       </li>
     </ul>
 
-    globalData:{{globalData}}
+    <div>
+      vuex count: {{ $store.state.counter.count }}
+    </div>
+
+    <div>
+      globalData:{{ globalData }}
+    </div>
   </div>
 </template>
 
@@ -51,6 +57,7 @@ export default {
   created() {
     var appInstance = getApp()
     this.globalData = appInstance.globalData;
+    console.log(this)
   },
   methods: {
     onTouchStart(e) {

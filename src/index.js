@@ -1,8 +1,13 @@
 import App from './App'
 import Vue from 'vue'
+import Vuex from 'vuex'
 import VHtmlPlugin from '@megalo/vhtml-plugin'
 
+Vue.use(Vuex)
 Vue.use(VHtmlPlugin)
+
+const store = require('./store').default
+Vue.prototype.$store = store
 
 const app = new Vue( App )
 
