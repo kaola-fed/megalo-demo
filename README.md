@@ -21,3 +21,7 @@ npm run dev:alipay
 ```bash
 npm run dev:swan
 ```
+
+## issue
+
+demo 工程有问题，请到 [这里](https://github.com/kaola-fed/megalo/issues) 提 issue，便于管理，谢谢。
