@@ -36,5 +36,27 @@ export default {
           pages: ['pages/a/index']
       }
     ],
+    tabBar: {
+      list: [
+        {
+        pagePath: 'pages/index/index',
+        text: '首页'
+        },
+        {
+        pagePath: 'pages/todomvc/index',
+        text: 'todo'
+        }
+      ]
+    },
+    _alipay: {
+      window: {
+        navigationBarTitleText: 'Alipay'
+      }
+    },
+    _swan: {
+      window: {
+        navigationBarTitleText: 'Baidu'
+      }
+    }
   }
 }
