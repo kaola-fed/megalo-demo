@@ -1,3 +1,18 @@
 {
-  "presets": [ "env", "stage-0" ]
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions", "safari >= 7"]
+      },
+      "debug": false
+    }]
+    , "stage-0"
+  ],
+  "plugins": [
+    ["transform-runtime", {
+      "helpers": false,
+      "polyfill": false,
+      "regenerator": true   
+    }]
+  ]
 }
