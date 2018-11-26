@@ -17,6 +17,11 @@
 </template>
 
 <script>
+
+(async function() {
+  console.log('111')
+})()
+
 export default {
   mpType: 'page',
   data() {
