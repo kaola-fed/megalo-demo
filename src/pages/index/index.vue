@@ -48,9 +48,13 @@ export default {
           text: '原生自定义组件',
         },
         {
-          link: '../../packageA/pages/a/index',
+          link: '/packageA/pages/a/index',
           text: 'packageA-a',
-        }
+        },
+        {
+          link: '/packageA/pages/todomvc/index',
+          text: 'packageA-todomvc',
+        },
       ]
     }
   },

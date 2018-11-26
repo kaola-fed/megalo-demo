@@ -23,12 +23,17 @@ function createBaseConfig( platform = 'wechat' ) {
       htmlParse: {
         templateName: 'octoParse',
         src: _.resolve(`./node_modules/octoparse/lib/platform/${platform}`)
+      },
+      subPackages:{
+        'packageA/pages/a/index':'packageA',
+        'packageA/pages/todomvc/index':'packageA'
       }
     } ),
 
     entry: {
       'app': _.resolve( 'src/index.js' ),
       'packageA/pages/a/index': _.resolve( 'src/packageA/pages/a/index.js' ),
+      'packageA/pages/todomvc/index': _.resolve( 'src/packageA/pages/todomvc/index.js' ),
       'pages/index/index': _.resolve( 'src/pages/index/index.js' ),
       'pages/todomvc/index': _.resolve( 'src/pages/todomvc/index.js' ),
       'pages/v-model/index': _.resolve( 'src/pages/v-model/index.js' ),
@@ -93,7 +98,7 @@ function createBaseConfig( platform = 'wechat' ) {
 
         {
           test: /\.js$/,
-          use: 'babel-loader'
+          use: 'babel-loader',
         },
 
         {

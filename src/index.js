@@ -33,7 +33,10 @@ export default {
     subPackages: [
       {
           root: 'packageA',
-          pages: ['pages/a/index']
+          pages: [
+            'pages/a/index',
+            'pages/todomvc/index',
+          ]
       }
     ],
     tabBar: {
