@@ -3,8 +3,9 @@ const compiler = require( '@megalo/template-compiler' )
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' )
 const VueLoaderPlugin = require( 'vue-loader/lib/plugin' )
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const { pagesEntry, getSubPackagesRoot } = require('@megalo/entry')
 const _ = require( './util' );
-
+const appMainFile = _.resolve('src/index.js')
 const CSS_EXT = {
   wechat: 'wxss',
   alipay: 'acss',
@@ -24,23 +25,12 @@ function createBaseConfig( platform = 'wechat' ) {
         templateName: 'octoParse',
         src: _.resolve(`./node_modules/octoparse/lib/platform/${platform}`)
       },
-      subPackages:{
-        'packageA/pages/a/index':'packageA',
-        'packageA/pages/todomvc/index':'packageA'
-      }
+      subPackages: getSubPackagesRoot(appMainFile)    // 用于分包root定位
     } ),
 
     entry: {
-      'app': _.resolve( 'src/index.js' ),
-      'packageA/pages/a/index': _.resolve( 'src/packageA/pages/a/index.js' ),
-      'packageA/pages/todomvc/index': _.resolve( 'src/packageA/pages/todomvc/index.js' ),
-      'pages/index/index': _.resolve( 'src/pages/index/index.js' ),
-      'pages/todomvc/index': _.resolve( 'src/pages/todomvc/index.js' ),
-      'pages/v-model/index': _.resolve( 'src/pages/v-model/index.js' ),
-      'pages/v-html/index': _.resolve( 'src/pages/v-html/index.js' ),
-      'pages/vuex/index': _.resolve( 'src/pages/vuex/index.js' ),
-      'pages/webview/index': _.resolve( 'src/pages/webview/index.js' ),
-      'pages/native/index': _.resolve( 'src/pages/native/index.js' ),
+      'app': appMainFile,
+      ...pagesEntry(appMainFile)
     },
 
     output: {

@@ -20,8 +20,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@megalo/target": "*",
-    "@megalo/template-compiler": "*",
+    "@megalo/target": "^0.4.0",
+    "@megalo/template-compiler": "^0.4.0",
     "babel-core": "6",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -43,8 +43,9 @@
     "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {
+    "@megalo/entry": "^0.1.0",
     "@megalo/vhtml-plugin": "^0.1.0",
-    "megalo": "*",
-    "octoparse": "*"
+    "megalo": "^0.4.0",
+    "octoparse": "^0.2.0"
   }
 }

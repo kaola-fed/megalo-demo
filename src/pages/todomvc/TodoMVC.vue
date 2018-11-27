@@ -264,7 +264,6 @@ export default {
     flex: 1;
     line-height: @height;
     font-size: 18px;
-    white-space: pre-line;
     word-break: break-all;
     transition: color 0.4s;
   }
