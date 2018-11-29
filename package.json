@@ -20,7 +20,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@megalo/target": "^0.4.0",
+    "@megalo/target": "^0.4.2",
     "@megalo/template-compiler": "^0.4.0",
     "babel-core": "6",
     "babel-loader": "^7.1.5",
