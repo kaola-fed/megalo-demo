@@ -4,7 +4,6 @@
 
 <script>
   export default {
-    mpType: 'app',
     onLaunch() {
       console.log('app onLaunch', this)
     },

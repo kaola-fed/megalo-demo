@@ -17,7 +17,6 @@
 <script>
 
 export default {
-  mpType: 'page',
   data() {
     return {
       slotName: 'foot',

@@ -13,7 +13,6 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-  mpType: 'page',
   computed: mapGetters([
       'evenOrOdd'
   ]),
