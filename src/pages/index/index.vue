@@ -37,7 +37,7 @@ export default {
           text: 'v-html',
         },
         {
-          link: '/pages/v-model/index',
+          link: '/pages/VModel',
           text: 'v-model',
         },
         {

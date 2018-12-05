@@ -24,8 +24,7 @@ function createBaseConfig( platform = 'wechat' ) {
       htmlParse: {
         templateName: 'octoParse',
         src: _.resolve(`./node_modules/octoparse/lib/platform/${platform}`)
-      },
-      subPackages: getSubPackagesRoot(appMainFile)    // 用于分包root定位
+      }
     } ),
 
     entry: {
