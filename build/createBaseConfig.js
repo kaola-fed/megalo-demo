@@ -77,10 +77,7 @@ function createBaseConfig( platform = 'wechat' ) {
           use: [
             {
               loader: 'vue-loader',
-              options: {
-                a: 1,
-                cacheIdentifier: 'x'
-              }
+              options: {}
             }
           ]
         },

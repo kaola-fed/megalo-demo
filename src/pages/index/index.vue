@@ -23,7 +23,6 @@
 })()
 
 export default {
-  mpType: 'page',
   data() {
     return {
       globalData:{},

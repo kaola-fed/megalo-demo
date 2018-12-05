@@ -13,7 +13,6 @@ const urls = {
 }
 
 export default {
-  mpType: 'page',
   data() {
     return {
       url: ''

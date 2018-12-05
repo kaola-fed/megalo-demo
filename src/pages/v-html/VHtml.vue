@@ -6,7 +6,6 @@
 
 <script>
 export default {
-  mpType: 'page',
   data() {
     return {
       html: `

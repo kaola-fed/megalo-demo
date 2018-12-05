@@ -49,8 +49,6 @@ const ALL = -1;
 let uid = 0;
 
 export default {
-  mpType: 'page',
-
   components: {
     CheckGroup
   },
