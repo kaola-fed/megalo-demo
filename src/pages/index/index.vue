@@ -28,10 +28,6 @@ export default {
       globalData:{},
       list: [
         {
-          link: '/pages/todomvc/index',
-          text: 'TodoMVC',
-        },
-        {
           link: '/pages/v-html/index',
           text: 'v-html',
         },
