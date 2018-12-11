@@ -29,6 +29,7 @@ export default {
       'pages/vuex/index',
       'pages/native/index',
       'pages/webview/index',
+      'pages/img/index',
     ],
     subPackages: [
       {

@@ -52,6 +52,10 @@ export default {
           text: '原生自定义组件',
         },
         {
+          link: '/pages/img/index',
+          text: 'img',
+        },
+        {
           link: '/packageA/pages/a/index',
           text: 'packageA-a',
         },

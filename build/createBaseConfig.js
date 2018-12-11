@@ -81,12 +81,10 @@ function createBaseConfig( platform = 'wechat' ) {
             }
           ]
         },
-
         {
           test: /\.js$/,
           use: 'babel-loader',
         },
-
         {
           test: /\.css$/,
           use: [
@@ -94,13 +92,24 @@ function createBaseConfig( platform = 'wechat' ) {
             'css-loader'
           ]
         },
-
         {
           test: /\.less$/,
           use: [
             MiniCssExtractPlugin.loader,
             'css-loader',
             'less-loader',
+          ]
+        },
+        {
+          test: /\.(png|jpe?g|gif)$/i,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 8192,
+                name: '[path]/[name].[ext]'
+              }
+            }
           ]
         }
       ]
