@@ -17,12 +17,16 @@
 </template>
 
 <script>
+import mixin from './mixin.js'
 
 (async function() {
   console.log('111')
 })()
 
 export default {
+  mixins: [
+    mixin
+  ],
   data() {
     return {
       globalData:{},
