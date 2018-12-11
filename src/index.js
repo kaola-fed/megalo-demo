@@ -24,7 +24,7 @@ export default {
     pages: [
       'pages/index/index',
       'pages/todomvc/index',
-      'pages/VModel',
+      'pages/v-model/index',
       'pages/v-html/index',
       'pages/vuex/index',
       'pages/native/index',
