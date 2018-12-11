@@ -20,9 +20,10 @@
     regularjs "^0.6.0"
     vue-template-compiler "2.5.17"
 
-"@megalo/target@^0.4.10":
-  version "0.4.10"
-  resolved "https://registry.yarnpkg.com/@megalo/target/-/target-0.4.10.tgz#a562f73bac084ea155b1dac3dfc13ef5060b9ad6"
+"@megalo/target@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@megalo/target/-/target-0.5.0.tgz#c0e6b6661a26f3064571e89efbaf61c885d9ab3e"
+  integrity sha512-/1BRhHigvcPOwQw0k9oAIjuL7s4RPMoZUYmkGs5KQuJguqCXR+m362LtImFRmwmMTf/m14fWfpjU/JvyGqScrQ==
   dependencies:
     "@megalo/regular-template-compiler" "^0.1.0"
     "@megalo/template-compiler" "*"
@@ -31,6 +32,7 @@
     babelon "^1.0.5"
     copy-webpack-plugin "^4.5.2"
     hash-sum "^1.0.2"
+    json5 "^2.1.0"
     loader-utils "^1.1.0"
     lodash.merge "^4.6.1"
     postcss "^7.0.2"
@@ -38,23 +40,17 @@
     querystring "^0.2.0"
     semver "^5.6.0"
 
-"@megalo/template-compiler@*":
+"@megalo/template-compiler@*", "@megalo/template-compiler@^0.6.0":
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/@megalo/template-compiler/-/template-compiler-0.6.0.tgz#180f8db0d1c4168f668c08c77800b8be8eb608a8"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
 
-"@megalo/template-compiler@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@megalo/template-compiler/-/template-compiler-0.4.0.tgz#b8c8fa2ef8112909e6e1758e42c1bff436293d8e"
-  dependencies:
-    de-indent "^1.0.2"
-    he "^1.1.0"
-
-"@megalo/vhtml-plugin@^0.1.0":
+"@megalo/vhtml-plugin@^0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@megalo/vhtml-plugin/-/vhtml-plugin-0.1.1.tgz#97bb171e7b7f18a7735ff3f4f6bf8e39d027cf61"
+  integrity sha512-o0MUpn3MEbfGCG212SCU3L840vKhou3m0wpG5kL3QxPT1/C8mOIU6Pvcjb64ZutGi6kYKbHsJbJvFYaVv80UaQ==
   dependencies:
     octoparse "*"
 
@@ -2099,6 +2095,14 @@ figgy-pudding@^3.1.0, figgy-pudding@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
 
+file-loader@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-2.0.0.tgz#39749c82f020b9e85901dcff98e8004e6401cfde"
+  integrity sha512-YCsBfd1ZGCyonOKLxPiKPdu+8ld9HAaMEvJewzz+b2eTF7uL5Zm/HdBF6FjCrpCMRq25Mi0U1gl4pwn2TlH7hQ==
+  dependencies:
+    loader-utils "^1.0.2"
+    schema-utils "^1.0.0"
+
 fill-range@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/fill-range/-/fill-range-4.0.0.tgz#d544811d428f98eb06a63dc402d2403c328c38f7"
@@ -3028,9 +3032,10 @@ media-typer@0.3.0:
   version "0.3.0"
   resolved "http://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
 
-megalo@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/megalo/-/megalo-0.4.0.tgz#2a8dc6a13231f143f10cac74c30d497ca7bdfbb3"
+megalo@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/megalo/-/megalo-0.6.0.tgz#9b74e532548842987657a73c6b0b3956381d9389"
+  integrity sha512-NvaxW3WxQ4WIcRPRSCNHypMpTIkL83boO4viPnY8f5mCGt+Pu0nLlOYj7/+0cCAAxf6SI1g2gaTyb9Vt+TiAZQ==
 
 mem@^4.0.0:
   version "4.0.0"
@@ -3104,9 +3109,10 @@ mime@^1.4.1:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
 
-mime@^2.3.1:
+mime@^2.0.3, mime@^2.3.1:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/mime/-/mime-2.4.0.tgz#e051fd881358585f3279df333fe694da0bcffdd6"
+  integrity sha512-ikBcWwyqXQSHKtciCcctu9YfPbFYZ4+gbHEmE0Q8jzcTYQg5dHCr3g2wwAZjPoJfQVXZq6KXAjpXOTf5/cjT7w==
 
 mimic-fn@^1.0.0:
   version "1.2.0"
@@ -3417,9 +3423,14 @@ obuf@^1.0.0, obuf@^1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
 
-octoparse@*, octoparse@^0.2.0:
+octoparse@*:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/octoparse/-/octoparse-0.2.0.tgz#f8dbfcdd5f4227975ffcacc645e15214dc15b4e7"
+
+octoparse@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/octoparse/-/octoparse-0.2.1.tgz#16d64cc39571671473822f3e0f3e340d20154b32"
+  integrity sha512-bYQ07Th1qDJQxleMh/ljHJ2AzYKHx4h14ECaGNf3Y+F0oNgnJtx/i0PBQyFZ8Qfhre1GqosovM4+WeQ0AWoRyQ==
 
 on-finished@~2.3.0:
   version "2.3.0"
@@ -4629,6 +4640,15 @@ uri-js@^4.2.2:
 urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
+
+url-loader@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/url-loader/-/url-loader-1.1.2.tgz#b971d191b83af693c5e3fea4064be9e1f2d7f8d8"
+  integrity sha512-dXHkKmw8FhPqu8asTc1puBfe3TehOCo2+RmOOev5suNCIYBcT626kxiWg1NBVkwc4rO8BGa7gP70W7VXuqHrjg==
+  dependencies:
+    loader-utils "^1.1.0"
+    mime "^2.0.3"
+    schema-utils "^1.0.0"
 
 url-parse@^1.4.3:
   version "1.4.4"
