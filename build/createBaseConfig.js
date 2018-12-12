@@ -107,7 +107,7 @@ function createBaseConfig( platform = 'wechat' ) {
               loader: 'url-loader',
               options: {
                 limit: 8192,
-                name: '[path]/[name].[ext]'
+                name: '[path][name].[ext]'
               }
             }
           ]
