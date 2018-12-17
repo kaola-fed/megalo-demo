@@ -12,11 +12,16 @@ const CSS_EXT = {
   swan: 'css',
 };
 
-function createBaseConfig( platform = 'wechat' ) {
+function createBaseConfig() {
+  const platform = process.env.PLATFORM
+  const NODE_ENV = process.env.NODE_ENV
+  const isDEV = NODE_ENV === 'development'
+  console.log('当前编译平台:', platform)
+  console.log('环境变量NODE_ENV:', NODE_ENV)
   const cssExt = CSS_EXT[platform]
 
   return {
-    mode: 'development',
+    mode: isDEV ? NODE_ENV : 'production',
 
     target: createMegaloTarget( {
       compiler: Object.assign( compiler, { } ),
@@ -37,7 +42,7 @@ function createBaseConfig( platform = 'wechat' ) {
       filename: 'static/js/[name].js',
       chunkFilename: 'static/js/[id].js'
     },
-
+    watch: isDEV,
     devServer: {
       // hot: true,
     },
