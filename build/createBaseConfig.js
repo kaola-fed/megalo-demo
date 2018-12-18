@@ -138,7 +138,7 @@ function createBaseConfig() {
       new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
           messages: [`Your miniprogram application has been compiled successfully`],
-          notes: [isDEV ? '' : `The compiled files are in directory dist-${platform}  (*^▽^*) Enjoy it~`]
+          notes: isDEV ? [] :[`The compiled files are in directory dist-${platform}  (*^▽^*) Enjoy it~`]
         },
         onErrors: function (severity, errors) {
           if (severity !== 'error') {
