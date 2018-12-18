@@ -8,10 +8,4 @@ const EnvPluginInstance = new EnvPlugin()
 const config = createBaseConfig()
 // 将插件配置到webpack的plugins选项中，在项目中你可以使用你配置的环境变量了
 config.plugins.unshift(EnvPluginInstance)
-webpack(config, (err, stats) => {
-    if (err || stats.hasErrors()) {
-        console.log('出现错误', err)
-        return
-    }
-    console.log('编译完毕')
-})
+webpack(config, () => {})

@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const createMegaloTarget = require( '@megalo/target' )
 const compiler = require( '@megalo/template-compiler' )
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' )
@@ -6,6 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { pagesEntry, getSubPackagesRoot } = require('@megalo/entry')
 const _ = require( './util' );
 const appMainFile = _.resolve('src/index.js')
+
 const CSS_EXT = {
   wechat: 'wxss',
   alipay: 'acss',
@@ -20,7 +23,7 @@ function createBaseConfig() {
   console.log('环境变量NODE_ENV:', NODE_ENV)
   const cssExt = CSS_EXT[platform]
 
-  return {
+  const webpackBaseConfig = {
     mode: isDEV ? NODE_ENV : 'production',
 
     target: createMegaloTarget( {
@@ -45,6 +48,8 @@ function createBaseConfig() {
     watch: isDEV,
     devServer: {
       // hot: true,
+      progress: isDEV,
+      quiet: true
     },
 
     optimization: {
@@ -61,9 +66,7 @@ function createBaseConfig() {
         name: 'runtime'
       }
     },
-
-    // devtool: 'cheap-source-map',
-    devtool: false,
+    devtool: isDEV ? 'cheap-source-map' : 'none',
 
     resolve: {
       extensions: ['.vue', '.js', '.json'],
@@ -129,9 +132,28 @@ function createBaseConfig() {
         context: `src/native/${platform}/`,
         from: `**/*`,
         to: _.resolve( `dist-${platform}/native` )
-      } ], {} )
+      } ], {}),
+      new webpack.NoEmitOnErrorsPlugin(),
+      new webpack.ProgressPlugin(),
+      new FriendlyErrorsPlugin({
+        compilationSuccessInfo: {
+          messages: [`Your miniprogram application has been compiled successfully`],
+          notes: [isDEV ? '' : `The compiled files are in directory dist-${platform}  (*^▽^*) Enjoy it~`]
+        },
+        onErrors: function (severity, errors) {
+          if (severity !== 'error') {
+            return;
+          }
+          console.log('(⊙﹏⊙) \n', errors[0].webpackError)
+        },
+        clearConsole: true,
+        additionalFormatters: [],
+        additionalTransformers: []
+      })
     ]
   }
+  
+  return webpackBaseConfig
 }
 
 module.exports = createBaseConfig
