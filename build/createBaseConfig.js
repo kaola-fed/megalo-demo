@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' )
 const VueLoaderPlugin = require( 'vue-loader/lib/plugin' )
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { pagesEntry, getSubPackagesRoot } = require('@megalo/entry')
-const _ = require( './util' );
+const _ = require( './util' )
 const appMainFile = _.resolve('src/index.js')
 
 const CSS_EXT = {
