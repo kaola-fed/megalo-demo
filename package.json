@@ -47,7 +47,6 @@
   "dependencies": {
     "@megalo/vhtml-plugin": "^0.1.1",
     "megalo": "^0.6.0",
-    "octoparse": "^0.2.1",
-    "vue-router": "^3.0.2"
+    "octoparse": "^0.2.1"
   }
 }
