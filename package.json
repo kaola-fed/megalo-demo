@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:wechat": "node ./build/megalo-cli.js --mode production --platform wechat",
-    "build:alipay": "node ./build/megalo-cli.js --mode production --platform alipay",
-    "build:swan": "node ./build/megalo-cli.js --mode production --platform swan",
-    "dev:wechat": "node ./build/megalo-cli.js --mode development --platform wechat",
-    "dev:alipay": "node ./build/megalo-cli.js --mode development --platform alipay",
-    "dev:swan": "node ./build/megalo-cli.js --mode development --platform swan",
+    "build:wechat": "node ./build/megalo-cli-service.js --mode production --platform wechat",
+    "build:alipay": "node ./build/megalo-cli-service.js --mode production --platform alipay",
+    "build:swan": "node ./build/megalo-cli-service.js --mode production --platform swan",
+    "dev:wechat": "node ./build/megalo-cli-service.js --mode development --platform wechat",
+    "dev:alipay": "node ./build/megalo-cli-service.js --mode development --platform alipay",
+    "dev:swan": "node ./build/megalo-cli-service.js --mode development --platform swan",
     "link": "npm link @megalo/template-compiler && npm link @megalo/target && npm link megalo/env-plugin && npm link megalo"
   },
   "keywords": [],
