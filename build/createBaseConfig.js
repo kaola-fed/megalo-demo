@@ -2,7 +2,9 @@ const webpack = require('webpack')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const createMegaloTarget = require( '@megalo/target' )
 const compiler = require( '@megalo/template-compiler' )
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' )
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const VueLoaderPlugin = require( 'vue-loader/lib/plugin' )
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { pagesEntry, getSubPackagesRoot } = require('@megalo/entry')
@@ -149,6 +151,18 @@ function createBaseConfig() {
         clearConsole: true,
         additionalFormatters: [],
         additionalTransformers: []
+      })
+    ]
+  }
+
+  if (!isDEV) {
+    webpackBaseConfig.optimization.minimizer = [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true
+      }),
+      new OptimizeCSSAssetsPlugin({
+        assetNameRegExp: new RegExp(`\\.${cssExt}$`, 'g')
       })
     ]
   }
