@@ -2,10 +2,12 @@ const webpack = require('webpack')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const createMegaloTarget = require( '@megalo/target' )
 const compiler = require( '@megalo/template-compiler' )
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' )
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const VueLoaderPlugin = require( 'vue-loader/lib/plugin' )
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const { pagesEntry, getSubPackagesRoot } = require('@megalo/entry')
+const { pagesEntry } = require('@megalo/entry')
 const _ = require( './util' )
 const appMainFile = _.resolve('src/index.js')
 
@@ -13,7 +15,12 @@ const CSS_EXT = {
   wechat: 'wxss',
   alipay: 'acss',
   swan: 'css',
-};
+}
+
+const cssLoaders = [
+  MiniCssExtractPlugin.loader,
+  'css-loader'
+]
 
 function createBaseConfig() {
   const platform = process.env.PLATFORM
@@ -71,7 +78,6 @@ function createBaseConfig() {
     resolve: {
       extensions: ['.vue', '.js', '.json'],
       alias: {
-        // 'vue': _.resolve('../../megalo-workspace/megalo/dist/megalo.mp.esm'),
         'vue': 'megalo',
         '@': _.resolve('src')
       },
@@ -95,17 +101,27 @@ function createBaseConfig() {
         },
         {
           test: /\.css$/,
-          use: [
-            MiniCssExtractPlugin.loader,
-            'css-loader'
-          ]
+          use: cssLoaders
         },
         {
           test: /\.less$/,
           use: [
-            MiniCssExtractPlugin.loader,
-            'css-loader',
+            ...cssLoaders,
             'less-loader',
+          ]
+        },
+        {
+          test: /\.styl(us)?$/,
+          use: [
+            ...cssLoaders,
+            'stylus-loader',
+          ]
+        },
+        {
+          test: /\.scss$/,
+          use: [
+            ...cssLoaders,
+            'sass-loader',
           ]
         },
         {
@@ -115,7 +131,7 @@ function createBaseConfig() {
               loader: 'url-loader',
               options: {
                 limit: 8192,
-                name: '[path][name].[ext]'
+                name: '/static/img/[name].[ext]'
               }
             }
           ]
@@ -128,11 +144,13 @@ function createBaseConfig() {
       new MiniCssExtractPlugin( {
         filename: `./static/css/[name].${cssExt}`,
       } ),
-      new CopyWebpackPlugin( [ {
-        context: `src/native/${platform}/`,
-        from: `**/*`,
-        to: _.resolve( `dist-${platform}/native` )
-      } ], {}),
+      new CopyWebpackPlugin([
+        {
+          context: `src/native/${platform}/`,
+          from: `**/*`,
+          to: _.resolve( `dist-${platform}/native` )
+        }
+      ]),
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.ProgressPlugin(),
       new FriendlyErrorsPlugin({
@@ -149,6 +167,18 @@ function createBaseConfig() {
         clearConsole: true,
         additionalFormatters: [],
         additionalTransformers: []
+      })
+    ]
+  }
+
+  if (!isDEV) {
+    webpackBaseConfig.optimization.minimizer = [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true
+      }),
+      new OptimizeCSSAssetsPlugin({
+        assetNameRegExp: new RegExp(`\\.${cssExt}$`, 'g')
       })
     ]
   }
