@@ -130,7 +130,7 @@ function createBaseConfig() {
               loader: 'url-loader',
               options: {
                 limit: 8192,
-                name: '/static/img/[name].[ext]'
+                name: '[path][name].[ext]'
               }
             }
           ]
