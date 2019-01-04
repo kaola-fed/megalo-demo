@@ -62,10 +62,14 @@ function createBaseConfig() {
     optimization: {
       splitChunks: {
         cacheGroups: {
-          commons: {
+          vendor: {
             test: /[\\/]node_modules[\\/]|megalo[\\/]/,
             name: 'vendor',
-            chunks: 'all'
+            chunks: 'initial'
+          },
+          common: {
+            name: 'common',
+            minChunks: 2
           }
         }
       },
