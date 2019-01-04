@@ -50,7 +50,7 @@ function createBaseConfig() {
     output: {
       path: _.resolve( `dist-${platform}/` ),
       filename: 'static/js/[name].js',
-      chunkFilename: 'static/js/[id].js'
+      chunkFilename: 'static/js/[name].js'
     },
     watch: isDEV,
     devServer: {
