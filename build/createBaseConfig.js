@@ -49,7 +49,8 @@ function createBaseConfig() {
 
     output: {
       path: _.resolve( `dist-${platform}/` ),
-      filename: 'static/js/[name].js'
+      filename: 'static/js/[name].js',
+      chunkFilename: 'static/js/[name].js'
     },
     watch: isDEV,
     devServer: {
@@ -61,10 +62,14 @@ function createBaseConfig() {
     optimization: {
       splitChunks: {
         cacheGroups: {
-          commons: {
+          vendor: {
             test: /[\\/]node_modules[\\/]|megalo[\\/]/,
             name: 'vendor',
-            chunks: 'all'
+            chunks: 'initial'
+          },
+          common: {
+            name: 'common',
+            minChunks: 2
           }
         }
       },
