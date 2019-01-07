@@ -60,6 +60,7 @@ function createBaseConfig() {
     },
 
     optimization: {
+      noEmitOnErrors: true,
       splitChunks: {
         cacheGroups: {
           vendor: {
@@ -135,6 +136,7 @@ function createBaseConfig() {
               loader: 'url-loader',
               options: {
                 limit: 8192,
+                // TODO 这里有个小bug, static的图片会生成在dist下面的src目录，子包的图片会生成在子包下的src目录，不影响分包策略，仅仅是路径看着有些别扭
                 name: '[path][name].[ext]'
               }
             }
@@ -155,7 +157,6 @@ function createBaseConfig() {
           to: _.resolve( `dist-${platform}/native` )
         }
       ]),
-      new webpack.NoEmitOnErrorsPlugin(),
       new webpack.ProgressPlugin(),
       new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
