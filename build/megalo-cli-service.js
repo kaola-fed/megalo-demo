@@ -11,11 +11,9 @@ const config = createBaseConfig()
 // 将插件配置到webpack的plugins选项中，在项目中你可以使用你配置的环境变量了
 config.plugins.unshift(EnvPluginInstance)
 
-if (process.env.NODE_ENV === 'production') {
-  romoveFile(_.resolve(`dist-${process.env.PLATFORM}/*`), error => {
-    if (error) throw error
-    webpack(config, () => {})
-  })
-} else {
+_.mergeUserConfig(config)
+
+romoveFile(_.resolve(`dist-${process.env.PLATFORM}/*`), error => {
+  if (error) throw error
   webpack(config, () => {})
-}
+})
