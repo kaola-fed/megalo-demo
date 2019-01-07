@@ -46,8 +46,8 @@
     "webpack-merge": "^4.1.5"
   },
   "dependencies": {
-    "@megalo/vhtml-plugin": "^0.1.1",
+    "@megalo/vhtml-plugin": "^0.1.2",
     "megalo": "^0.6.0",
-    "octoparse": "^0.2.1"
+    "octoparse": "^0.3.2"
   }
 }
