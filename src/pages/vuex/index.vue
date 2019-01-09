@@ -1,3 +1,12 @@
+<config lang="json">
+{
+  navigationBarTitleText: 'vuex',
+  usingComponents: {
+
+  }
+}
+</config>
+
 <template>
   <div id="app">
     Clicked: {{ $store.state.counter.count }} times, count is {{ evenOrOdd }}.

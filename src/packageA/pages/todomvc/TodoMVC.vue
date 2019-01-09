@@ -1,3 +1,9 @@
+<config>
+{
+  navigationBarTitleText: 'Megalo TodoMVC',
+}
+</config>
+
 <template>
   <div class="app">
     <h1 class="title">todos</h1>

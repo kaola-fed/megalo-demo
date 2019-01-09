@@ -25,6 +25,7 @@ export default {
       'pages/index/index',
       'pages/todomvc/index',
       'pages/v-model/index',
+      'pages/VModel',
       'pages/v-html/index',
       'pages/vuex/index',
       'pages/native/index',
@@ -36,7 +37,7 @@ export default {
           root: 'packageA',
           pages: [
             'pages/a/index',
-            'pages/todomvc/index',
+            'pages/todomvc/TodoMVC',
           ]
       }
     ],

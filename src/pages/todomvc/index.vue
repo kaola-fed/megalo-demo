@@ -1,3 +1,9 @@
+<config lang="json">
+{
+  navigationBarTitleText: 'TODOMVC2'
+}
+</config>
+
 <template>
   <div class="app">
     <h1 class="title">todos</h1>

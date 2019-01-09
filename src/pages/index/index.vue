@@ -1,3 +1,26 @@
+<config lang="json">
+{
+  navigationBarTitleText: 'Index',
+
+  // 微信小程序配置
+  _wechat: {
+    navigationBarBackgroundColor: '#44B549',
+    navigationBarTextStyle: 'white'
+  },
+
+  // 支付宝小程序配置
+  _alipay: {
+    navigationBarBackgroundColor: '#4D7AF4',
+  },
+
+  // 百度小程序配置
+  _swan: {
+    navigationBarBackgroundColor: '#38f',
+    navigationBarTextStyle: 'white'
+  }
+}
+</config>
+
 <template>
   <div class="app">
     <ul class="list">
@@ -43,6 +66,10 @@ export default {
           link: '/pages/v-model/index',
           text: 'v-model',
         },
+         {
+          link: '/pages/VModel',
+          text: 'v-model2',
+        },
         {
           link: '/pages/vuex/index',
           text: 'vuex',
@@ -64,7 +91,7 @@ export default {
           text: 'packageA-a',
         },
         {
-          link: '/packageA/pages/todomvc/index',
+          link: '/packageA/pages/todomvc/TodoMVC',
           text: 'packageA-todomvc',
         },
       ]

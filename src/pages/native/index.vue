@@ -1,3 +1,11 @@
+<config>
+{
+  usingComponents: {
+    compa: '../../native/compa/index'
+  }
+}
+</config>
+
 <template>
   <div class="app">
     <compa>
