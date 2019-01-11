@@ -1,5 +1,6 @@
 module.exports = {
-    configureWebpack: config => {
-        return config
-    }
+  bundleAnalyzerReport: false,
+  configureWebpack: config => {
+    return config
+  }
 }

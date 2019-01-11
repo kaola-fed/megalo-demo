@@ -8,8 +8,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const VueLoaderPlugin = require( 'vue-loader/lib/plugin' )
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { pagesEntry } = require('@megalo/entry')
-const _ = require( './util' )
-const appMainFile = _.resolve('src/index.js')
+const { contextDir } = require('./util')
+const appMainFile = `${contextDir}/src/index.js`
 
 const CSS_EXT = {
   wechat: 'wxss',
@@ -32,13 +32,13 @@ function createBaseConfig() {
 
   const webpackBaseConfig = {
     mode: isDEV ? NODE_ENV : 'production',
-
+  
     target: createMegaloTarget( {
       compiler: Object.assign( compiler, { } ),
       platform,
       htmlParse: {
         templateName: 'octoParse',
-        src: _.resolve(`./node_modules/octoparse/lib/platform/${platform}`)
+        src: `${contextDir}/node_modules/octoparse/lib/platform/${platform}`
       }
     } ),
 
@@ -48,7 +48,7 @@ function createBaseConfig() {
     },
 
     output: {
-      path: _.resolve( `dist-${platform}/` ),
+      path:  `${contextDir}/dist-${platform}/` ,
       filename: 'static/js/[name].js',
       chunkFilename: 'static/js/[name].js',
       pathinfo: false
@@ -85,19 +85,23 @@ function createBaseConfig() {
       extensions: ['.vue', '.js', '.json'],
       alias: {
         'vue': 'megalo',
-        '@': _.resolve('src')
-      },
+        '@': `${contextDir}/src`
+      }
     },
 
     module: {
+      noParse: /^(vue|vuex)$/,
       rules: [
-        // ... other rules
         {
           test: /\.vue$/,
           use: [
             {
               loader: 'vue-loader',
-              options: {}
+              options: {
+                compilerOptions: {
+                  preserveWhitespace: false
+                }
+              }
             }
           ]
         },
@@ -155,7 +159,7 @@ function createBaseConfig() {
         {
           context: `src/native/${platform}/`,
           from: `**/*`,
-          to: _.resolve( `dist-${platform}/native` )
+          to: `${contextDir}/dist-${platform}/native`
         }
       ]),
       new webpack.ProgressPlugin(),
@@ -166,7 +170,7 @@ function createBaseConfig() {
         },
         onErrors: function (severity, errors) {
           if (severity !== 'error') {
-            return;
+            return
           }
           console.log('(⊙﹏⊙) \n', errors[0].webpackError)
         },
