@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const createMegaloTarget = require( '@megalo/target' )
 const compiler = require( '@megalo/template-compiler' )
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' )
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const VueLoaderPlugin = require( 'vue-loader/lib/plugin' )
@@ -183,7 +183,7 @@ function createBaseConfig() {
 
   if (!isDEV) {
     webpackBaseConfig.optimization.minimizer = [
-      new UglifyJsPlugin({
+      new TerserPlugin({
         cache: true,
         parallel: true
       }),
