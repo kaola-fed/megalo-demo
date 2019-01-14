@@ -1,3 +1,15 @@
+<config>
+{
+  usingComponents: {
+
+  },
+  _wechat: {
+    usingComponents: {
+      textarea: '../../native/textarea/index'
+    }
+  }
+}
+</config>
 <template>
   <div class="app">
     <div>
@@ -37,5 +49,8 @@ export default {
   .textarea,
   .input {
     border: 1px solid #e5e5e5;
+  }
+  .textarea {
+    height: 100px;
   }
 </style>
