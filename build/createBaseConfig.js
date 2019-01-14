@@ -14,7 +14,7 @@ const appMainFile = `${contextDir}/src/index.js`
 const CSS_EXT = {
   wechat: 'wxss',
   alipay: 'acss',
-  swan: 'css',
+  swan: 'css'
 }
 
 const cssLoaders = [
@@ -22,7 +22,7 @@ const cssLoaders = [
   'css-loader'
 ]
 
-function createBaseConfig() {
+function createBaseConfig () {
   const platform = process.env.PLATFORM
   const NODE_ENV = process.env.NODE_ENV
   const isDEV = NODE_ENV === 'development'
@@ -107,7 +107,7 @@ function createBaseConfig() {
         },
         {
           test: /\.js$/,
-          use: 'babel-loader',
+          use: 'babel-loader'
         },
         {
           test: /\.css$/,
@@ -117,21 +117,21 @@ function createBaseConfig() {
           test: /\.less$/,
           use: [
             ...cssLoaders,
-            'less-loader',
+            'less-loader'
           ]
         },
         {
           test: /\.styl(us)?$/,
           use: [
             ...cssLoaders,
-            'stylus-loader',
+            'stylus-loader'
           ]
         },
         {
           test: /\.scss$/,
           use: [
             ...cssLoaders,
-            'sass-loader',
+            'sass-loader'
           ]
         },
         {
@@ -173,7 +173,7 @@ function createBaseConfig() {
     plugins: [
       new VueLoaderPlugin(),
       new MiniCssExtractPlugin({
-        filename: `./static/css/[name].${cssExt}`,
+        filename: `./static/css/[name].${cssExt}`
       }),
       new CopyWebpackPlugin([
         {
