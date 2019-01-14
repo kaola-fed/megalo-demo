@@ -12,20 +12,22 @@ export default {
   props: {
     source: {
       type: Array,
-      default: []
+      default: function () {
+        return []
+      }
     }
   },
   methods: {
-    onCheck(item, itemIndex) {
+    onCheck (item, itemIndex) {
       this.source.forEach(i => {
-        i.checked = item === i;
-      });
-  
+        i.checked = item === i
+      })
+
       this.$emit('checked', {
         sender: this,
         item,
         itemIndex
-      });
+      })
     }
   }
 }

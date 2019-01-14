@@ -9,7 +9,7 @@ Vue.use(VHtmlPlugin)
 const store = require('./store').default
 Vue.prototype.$store = store
 
-const app = new Vue( App )
+const app = new Vue(App)
 
 app.$mount()
 
@@ -30,26 +30,26 @@ export default {
       'pages/vuex/index',
       'pages/native/index',
       'pages/webview/index',
-      'pages/img/index',
+      'pages/img/index'
     ],
     subPackages: [
       {
-          root: 'packageA',
-          pages: [
-            'pages/a/index',
-            'pages/todomvc/TodoMVC',
-          ]
+        root: 'packageA',
+        pages: [
+          'pages/a/index',
+          'pages/todomvc/TodoMVC'
+        ]
       }
     ],
     tabBar: {
       list: [
         {
-        pagePath: 'pages/index/index',
-        text: '首页'
+          pagePath: 'pages/index/index',
+          text: '首页'
         },
         {
-        pagePath: 'pages/todomvc/index',
-        text: 'todo'
+          pagePath: 'pages/todomvc/index',
+          text: 'todo'
         }
       ]
     },

@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       value: 'input111',
       textAreaValue: 'text222',
@@ -25,8 +25,8 @@ export default {
       list: [1, 2]
     }
   },
-  created() {
-  },
+  created () {
+  }
 }
 </script>
 

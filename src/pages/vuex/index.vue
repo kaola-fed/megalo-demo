@@ -23,11 +23,11 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
   computed: mapGetters([
-      'evenOrOdd'
+    'evenOrOdd'
   ]),
-  data(){
+  data () {
     return {
-      globalData:{}
+      globalData: {}
     }
   },
   methods: {
@@ -37,13 +37,13 @@ export default {
       'incrementIfOdd',
       'incrementAsync'
     ]),
-    test: function() {
+    test: function () {
       this.globalData['a']++
     }
   },
-  created(){
+  created () {
     var appInstance = getApp()
-    this.globalData = appInstance.globalData;
+    this.globalData = appInstance.globalData
   }
 }
 </script>

@@ -13,12 +13,12 @@ const urls = {
 }
 
 export default {
-  data() {
+  data () {
     return {
       url: ''
     }
   },
-  created() {
+  created () {
     const { platform } = this.$mp
     this.url = urls[platform]
   }

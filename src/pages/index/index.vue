@@ -42,7 +42,7 @@
 <script>
 import mixin from './mixin.js'
 
-(async function() {
+(async function () {
   console.log('111')
 })()
 
@@ -50,60 +50,60 @@ export default {
   mixins: [
     mixin
   ],
-  data() {
+  data () {
     return {
-      globalData:{},
+      globalData: {},
       list: [
         {
           link: '/pages/todomvc/index',
-          text: 'TodoMVC',
+          text: 'TodoMVC'
         },
         {
           link: '/pages/v-html/index',
-          text: 'v-html',
+          text: 'v-html'
         },
         {
           link: '/pages/v-model/index',
-          text: 'v-model',
+          text: 'v-model'
         },
-         {
+        {
           link: '/pages/VModel',
-          text: 'v-model2',
+          text: 'v-model2'
         },
         {
           link: '/pages/vuex/index',
-          text: 'vuex',
+          text: 'vuex'
         },
         {
           link: '/pages/webview/index',
-          text: 'web-view',
+          text: 'web-view'
         },
         {
           link: '/pages/native/index',
-          text: '原生自定义组件',
+          text: '原生自定义组件'
         },
         {
           link: '/pages/img/index',
-          text: 'img',
+          text: 'img'
         },
         {
           link: '/packageA/pages/a/index',
-          text: 'packageA-a',
+          text: 'packageA-a'
         },
         {
           link: '/packageA/pages/todomvc/TodoMVC',
-          text: 'packageA-todomvc',
-        },
+          text: 'packageA-todomvc'
+        }
       ]
     }
   },
-  created() {
+  created () {
     var appInstance = getApp()
-    this.globalData = appInstance.globalData;
+    this.globalData = appInstance.globalData
     console.log(this)
   },
   methods: {
-    onTouchStart(e) {
+    onTouchStart (e) {
       console.log(e)
     }
   }

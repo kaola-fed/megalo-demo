@@ -1,11 +1,11 @@
 const webpack = require('webpack')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
-const createMegaloTarget = require( '@megalo/target' )
-const compiler = require( '@megalo/template-compiler' )
+const createMegaloTarget = require('@megalo/target')
+const compiler = require('@megalo/template-compiler')
 const TerserPlugin = require('terser-webpack-plugin')
-const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' )
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const VueLoaderPlugin = require( 'vue-loader/lib/plugin' )
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { pagesEntry } = require('@megalo/entry')
 const { contextDir } = require('./util')
@@ -32,15 +32,15 @@ function createBaseConfig() {
 
   const webpackBaseConfig = {
     mode: isDEV ? NODE_ENV : 'production',
-  
-    target: createMegaloTarget( {
-      compiler: Object.assign( compiler, { } ),
+
+    target: createMegaloTarget({
+      compiler: Object.assign(compiler, {}),
       platform,
       htmlParse: {
         templateName: 'octoParse',
         src: `${contextDir}/node_modules/octoparse/lib/platform/${platform}`
       }
-    } ),
+    }),
 
     entry: {
       'app': appMainFile,
@@ -48,7 +48,7 @@ function createBaseConfig() {
     },
 
     output: {
-      path:  `${contextDir}/dist-${platform}/` ,
+      path: `${contextDir}/dist-${platform}/`,
       filename: 'static/js/[name].js',
       chunkFilename: 'static/js/[name].js',
       pathinfo: false
@@ -146,15 +146,35 @@ function createBaseConfig() {
               }
             }
           ]
+        },
+        {
+          enforce: 'pre',
+          test: /\.(vue|(j|t)sx?)$/,
+          exclude: [/node_modules/],
+          use: [
+            {
+              loader: 'eslint-loader',
+              options: {
+                extensions: [
+                  '.js',
+                  '.jsx',
+                  '.vue'
+                ],
+                cache: true,
+                emitWarning: true,
+                emitError: true
+              }
+            }
+          ]
         }
       ]
     },
 
     plugins: [
       new VueLoaderPlugin(),
-      new MiniCssExtractPlugin( {
+      new MiniCssExtractPlugin({
         filename: `./static/css/[name].${cssExt}`,
-      } ),
+      }),
       new CopyWebpackPlugin([
         {
           context: `src/native/${platform}/`,
@@ -166,7 +186,7 @@ function createBaseConfig() {
       new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
           messages: [`Your miniprogram application has been compiled successfully`],
-          notes: isDEV ? [] :[`The compiled files are in directory dist-${platform}  (*^▽^*) Enjoy it~`]
+          notes: isDEV ? [] : [`The compiled files are in directory dist-${platform}  (*^▽^*) Enjoy it~`]
         },
         onErrors: function (severity, errors) {
           if (severity !== 'error') {
@@ -192,7 +212,7 @@ function createBaseConfig() {
       })
     ]
   }
-  
+
   return webpackBaseConfig
 }
 

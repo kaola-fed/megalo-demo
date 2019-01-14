@@ -1,8 +1,8 @@
 export default {
-  created() {
+  created () {
     console.log('created', 2)
   },
-  onShow() {
+  onShow () {
     console.log('onShow', 2)
   }
 }
