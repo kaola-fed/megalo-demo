@@ -1,0 +1,6 @@
+textarea{
+	width:inherit;
+	height:inherit;
+	display:inherit;
+	position:inherit;
+}

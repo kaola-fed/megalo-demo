@@ -1,0 +1,25 @@
+<textarea
+  placeholder="{{placeholder}}"
+  placeholder-style="{{placeholderStyle}}"
+  placeholder-class="{{placeholderClass}}"
+  disabled="{{disabled}}"
+  auto-focus="{{autoFocus}}"
+  focus="{{focue}}"
+  auto-height="{{autoHeight}}"
+  fixed="{{fixed}}"
+  cursor-spacing="{{cursorSpacing}}"
+  cursor="{{cursor}}"
+  show-confirm-bar="{{showConfirmBar}}"
+  selection-start="{{selectionStart}}"
+  selection-end="{{selectionEnd}}"
+  adjust-position="{{adjustPosition}}"
+  maxlength="{{maxlength}}"
+  value="{{value}}"
+
+  bindinput="proxy"
+  bindblur="proxy"
+  bindfocus="proxy"
+  bindblur="proxy"
+  bindlinechange="proxy"
+>
+</textarea>

@@ -9,6 +9,11 @@ export default {
   config: {
     usingComponents: {
 
+    },
+    _wechat: {
+      usingComponents: {
+        textarea: '../../native/textarea/index'
+      }
     }
   }
 }
