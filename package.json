@@ -10,7 +10,7 @@
     "dev:wechat": "megalo-cli-service --mode development --platform wechat",
     "dev:alipay": "megalo-cli-service --mode development --platform alipay",
     "dev:swan": "megalo-cli-service --mode development --platform swan",
-    "lint": "eslint --fix --ext .js,.vue src build"
+    "lint": "eslint --fix --ext .js,.vue src"
   },
   "keywords": [],
   "license": "MIT",
