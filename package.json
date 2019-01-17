@@ -15,11 +15,11 @@
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
+    "@megalo/cli-service": "^0.1.0",
     "@megalo/entry": "^0.1.1",
     "@megalo/env-plugin": "^1.0.1",
-    "@megalo/target": "0.5.6",
+    "@megalo/target": "^0.6.2",
     "@megalo/template-compiler": "^0.7.3",
-    "@megalo/cli-service": "https://github.com/megalojs/megalo-cli-service.git",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-core": "6",
     "babel-eslint": "^10.0.1",
