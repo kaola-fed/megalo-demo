@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       html: `
         <img src="//pop.nosdn.127.net/e2170dcf-efd0-4906-9da9-3a9900e52b39"><br/>
@@ -14,11 +14,11 @@ export default {
         <span>
           <span>test</span><br/><span>test2</span>
         </span>
-      `,
+      `
     }
   },
-  created() {
-  },
+  created () {
+  }
 }
 </script>
 

@@ -1,3 +1,11 @@
+<config>
+{
+  usingComponents: {
+    compa: '../../native/compa/index'
+  }
+}
+</config>
+
 <template>
   <div class="app">
     <compa>
@@ -17,7 +25,7 @@
 <script>
 
 export default {
-  data() {
+  data () {
     return {
       slotName: 'foot',
       title: 'hello',

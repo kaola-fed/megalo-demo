@@ -1,3 +1,9 @@
+<config lang="json">
+{
+  navigationBarTitleText: 'TODOMVC2'
+}
+</config>
+
 <template>
   <div class="app">
     <h1 class="title">todos</h1>
@@ -43,10 +49,10 @@
 <script>
 import CheckGroup from './CheckGroup.vue'
 
-const COMPELETED = 1;
-const ACTIVE = 0;
-const ALL = -1;
-let uid = 0;
+const COMPELETED = 1
+const ACTIVE = 0
+const ALL = -1
+let uid = 0
 
 export default {
   components: {
@@ -54,47 +60,47 @@ export default {
   },
 
   computed: {
-    showList() {
+    showList () {
       const newList = this.list.filter((todo) => {
-        const showStatus = this.showStatus;
-        if ( showStatus === ALL ) {
-          return true;
+        const showStatus = this.showStatus
+        if (showStatus === ALL) {
+          return true
         } else {
-          return showStatus === todo.status;
+          return showStatus === todo.status
         }
-      });
+      })
       return newList
     }
   },
 
   filters: {
-    len(val) {
+    len (val) {
       return val.length
     }
   },
 
-  created() {
+  created () {
     console.log('created')
     console.log(this)
   },
 
-  onLoad() {
+  onLoad () {
     console.log('onLoad')
   },
 
-  mounted() {
+  mounted () {
     console.log('mounted')
   },
 
-  onReady() {
+  onReady () {
     console.log('onReady')
   },
 
-  onShow() {
+  onShow () {
     console.log('onShow')
   },
 
-  data() {
+  data () {
     return {
       COMPELETED,
       ACTIVE,
@@ -118,48 +124,48 @@ export default {
   },
 
   methods: {
-    onDropdown() {
-      this.dropdown = !this.dropdown;
+    onDropdown () {
+      this.dropdown = !this.dropdown
     },
 
-    onEnter(e) {
-      const value = e.detail.value;
+    onEnter (e) {
+      const value = e.detail.value
       if (!value) {
-        return;
+        return
       }
-      this.input = '';
+      this.input = ''
       this.addTodo({
         label: value,
         id: uid++
-      });
+      })
     },
 
-    onStatusUpdate( todo ) {
+    onStatusUpdate (todo) {
       if (todo.status === ACTIVE) {
-        todo.status = COMPELETED;
+        todo.status = COMPELETED
       } else {
-        todo.status = ACTIVE;
+        todo.status = ACTIVE
       }
     },
 
-    onFilterList( e ) {
-      this.showStatus = e.item.value;
+    onFilterList (e) {
+      this.showStatus = e.item.value
     },
 
-    onRemove(item) {
-      this.list = this.list.filter(todo => todo !== item);
+    onRemove (item) {
+      this.list = this.list.filter(todo => todo !== item)
     },
 
-    onClear( status = COMPELETED ) {
-      this.list = this.list.filter(todo => todo.status !== status);
+    onClear (status = COMPELETED) {
+      this.list = this.list.filter(todo => todo.status !== status)
     },
 
-    addTodo(todo) {
+    addTodo (todo) {
       this.list.push({
         label: todo.label,
         status: todo.status || ACTIVE,
         id: uid++
-      });
+      })
     }
   }
 }
@@ -188,7 +194,6 @@ export default {
 .icon-weigouxuan:before { content: "\e64a"; }
 
 .icon-yigouxuan:before { content: "\e64b"; }
-
 
 .todo-wrap {
   width: @width;

@@ -1,3 +1,15 @@
+<config>
+{
+  usingComponents: {
+
+  },
+  _wechat: {
+    usingComponents: {
+      textarea: '../../native/textarea/index'
+    }
+  }
+}
+</config>
 <template>
   <div class="app">
     <div>
@@ -17,7 +29,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       value: 'input111',
       textAreaValue: 'text222',
@@ -25,8 +37,8 @@ export default {
       list: [1, 2]
     }
   },
-  created() {
-  },
+  created () {
+  }
 }
 </script>
 

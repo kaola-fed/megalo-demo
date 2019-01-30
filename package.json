@@ -4,49 +4,36 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:wechat": "node ./build/megalo-cli-service.js --mode production --platform wechat",
-    "build:alipay": "node ./build/megalo-cli-service.js --mode production --platform alipay",
-    "build:swan": "node ./build/megalo-cli-service.js --mode production --platform swan",
-    "dev:wechat": "node ./build/megalo-cli-service.js --mode development --platform wechat",
-    "dev:alipay": "node ./build/megalo-cli-service.js --mode development --platform alipay",
-    "dev:swan": "node ./build/megalo-cli-service.js --mode development --platform swan",
-    "link": "npm link @megalo/template-compiler && npm link @megalo/target && npm link megalo/env-plugin && npm link megalo"
+    "build:wechat": "megalo-cli-service --mode production --platform wechat",
+    "build:alipay": "megalo-cli-service --mode production --platform alipay",
+    "build:swan": "megalo-cli-service --mode production --platform swan",
+    "dev:wechat": "megalo-cli-service --mode development --platform wechat",
+    "dev:alipay": "megalo-cli-service --mode development --platform alipay",
+    "dev:swan": "megalo-cli-service --mode development --platform swan",
+    "lint": "eslint --fix --ext .js,.vue src"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
+    "@megalo/cli-service": "^0.1.0",
     "@megalo/entry": "^0.1.1",
     "@megalo/env-plugin": "^1.0.1",
     "@megalo/target": "^0.6.2",
     "@megalo/template-compiler": "^0.7.3",
+    "@vue/eslint-config-standard": "^4.0.0",
     "babel-core": "6",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
-    "copy-webpack-plugin": "^4.5.2",
-    "css-loader": "^1.0.0",
-    "file-loader": "^2.0.0",
-    "friendly-errors-webpack-plugin": "^1.7.0",
-    "html-webpack-plugin": "^3.2.0",
     "less": "^3.8.1",
-    "less-loader": "^4.1.0",
-    "mini-css-extract-plugin": "^0.4.1",
-    "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "rimraf": "^2.6.2",
-    "uglifyjs-webpack-plugin": "^2.0.1",
-    "url-loader": "^1.1.2",
-    "vue-loader": "15.4.0",
-    "vue-style-loader": "^4.1.1",
-    "vuex": "^3.0.1",
-    "webpack": "^4.26.0",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "less-loader": "^4.1.0"
   },
   "dependencies": {
     "@megalo/vhtml-plugin": "^0.1.2",
     "megalo": "^0.7.3",
-    "octoparse": "^0.3.2"
+    "octoparse": "^0.3.2",
+    "vuex": "^3.0.1"
   }
 }
