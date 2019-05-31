@@ -46,7 +46,7 @@ export default {
         ],
       },
       {
-        root: '2',
+        root: '11',
         pages: [
           'pages/b/index',
         ],

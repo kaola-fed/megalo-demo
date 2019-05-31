@@ -72,8 +72,8 @@ export default {
           text: '1-a'
         },
         {
-          link: '/2/pages/b/index',
-          text: '2-b'
+          link: '/11/pages/b/index',
+          text: '11-b'
         }
       ]
     }

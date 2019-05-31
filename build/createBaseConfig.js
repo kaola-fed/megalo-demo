@@ -168,7 +168,7 @@ function createBaseConfig() {
           }
           console.log('(⊙﹏⊙) \n', errors[0].webpackError)
         },
-        clearConsole: true,
+        clearConsole: false,
         additionalFormatters: [],
         additionalTransformers: []
       })
@@ -186,7 +186,7 @@ function createBaseConfig() {
       })
     ]
   }
-  
+
   return webpackBaseConfig
 }
 
