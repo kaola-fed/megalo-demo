@@ -38,6 +38,18 @@ export default {
             'pages/a/index',
             'pages/todomvc/index',
           ]
+      },
+      {
+        root: '1',
+        pages: [
+          'pages/a/index',
+        ],
+      },
+      {
+        root: '2',
+        pages: [
+          'pages/b/index',
+        ],
       }
     ],
     tabBar: {

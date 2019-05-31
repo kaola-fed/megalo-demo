@@ -67,6 +67,14 @@ export default {
           link: '/packageA/pages/todomvc/index',
           text: 'packageA-todomvc',
         },
+        {
+          link: '/1/pages/a/index',
+          text: '1-a'
+        },
+        {
+          link: '/2/pages/b/index',
+          text: '2-b'
+        }
       ]
     }
   },
